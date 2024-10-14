@@ -1,0 +1,23 @@
+echo "😁 checking your project before committing"
+
+npm run format || 
+(
+    echo "🤮 [FORMAT] formatting failed";
+    false;
+)
+
+npm run test || 
+(
+    echo "🤮 [TESTING] unit testing failed";
+    false;
+)
+
+npm run build || 
+(
+    echo "🤮 [BUILD] building failed";
+    false;
+)
+
+echo "😝 all done"
+
+echo "🪟 ready to be committed!"
